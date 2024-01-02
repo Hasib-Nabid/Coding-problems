@@ -11,22 +11,17 @@ typedef double dl;
 int main()
 {
     optimize();
-    string s1,s2,s3;
-    cin>>s1>>s2>>s3;
-    s1+=s2;
-    bool flag=true;
-    int freq1[26]={0};
-    int freq2[26]={0};
-    for(int i=0;i<s1.size();i++){
-        freq1[s1[i]-'A']++;
-    }
-        for(int i=0;i<s3.size();i++){
-        freq2[s3[i]-'A']++;
-    }
-        for(int i=0;i<s3.size();i++){
-        if(freq1[i]!=freq2[i]) flag=false;
-    }
-    if(flag) cout<<"YES";
-    else cout<<"NO";
+string a, b, c, s;
+    cin >> a >> b >> c;
+
+    s = a + b;
+
+    sort(s.begin(), s.end());
+    sort(c.begin(), c.end());
+
+    if(s == c)
+        cout << "YES" << endl;
+    else
+        cout << "NO" << endl;
     return 0;
 }
