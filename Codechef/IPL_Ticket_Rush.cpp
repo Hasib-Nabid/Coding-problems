@@ -11,5 +11,4 @@ int main() {
 	    if(ans<0) cout<<"0"<<endl;
 	    else cout<<ans<<endl;
 	}
-
 }
