@@ -20,6 +20,7 @@ public class A_Buttons{
                 System.out.println("First");
             }
             else  System.out.println("Second");
+            sc.close();
         }
     }
 }
