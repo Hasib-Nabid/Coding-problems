@@ -40,28 +40,35 @@ const double PI = acos(-1);
 int main()
 {
     nabidtheboss();
-    w(t){
-        int n;
-        string s;
-        cin>>n>>s;
-         int l = 0,r = n-1;
-        while(l<=r)
-        {
-            if(s[l]=='B' && s[r]=='B')
-            {
-                cout<<r-l+1<<endl;
-                break;
-            }
-            if(s[l]!='B')
-            {
-                l++;
-            }
-            if(s[r]!='B')
-            {
-                r--;
-            }
-    }
-    }
+    
+    vector<int> permutation;
 
+   w(t){
+    int n;
+    cin>>n;
+    if (n % 2 == 0) {
+
+        for (int i = n-1; i > 0; i -= 2)
+            permutation.push_back(i);
+        for (int i = n; i > 0; i -= 2)
+            permutation.push_back(i);
+    } else {
+  
+        for (int i = n; i > 0; i -= 2)
+            permutation.push_back(i);
+        for (int i = n-1; i > 0; i -= 2)
+            permutation.push_back(i);
+    }
+    
+    for (int i = 0; i < t; ++i) {
+        int n;
+       cin >> n;
+
+        for (int j = 0; j < n; ++j) {
+            cout << permutation[j] << " ";
+        }
+    }
+     cout << endl;
+   }
     return 0;
 }

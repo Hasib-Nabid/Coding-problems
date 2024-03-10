@@ -41,26 +41,15 @@ int main()
 {
     nabidtheboss();
     w(t){
-        int n;
         string s;
-        cin>>n>>s;
-         int l = 0,r = n-1;
-        while(l<=r)
-        {
-            if(s[l]=='B' && s[r]=='B')
-            {
-                cout<<r-l+1<<endl;
-                break;
-            }
-            if(s[l]!='B')
-            {
-                l++;
-            }
-            if(s[r]!='B')
-            {
-                r--;
-            }
-    }
+        cin>>s;
+        int a=0,b=0;
+        for(auto u:s){
+            if(u=='A') a++;
+            else b++;
+        }
+        if(a>b) cout<<"A"<<endl;
+        else cout<<"B"<<endl;
     }
 
     return 0;

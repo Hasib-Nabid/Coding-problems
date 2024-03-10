@@ -36,32 +36,26 @@ const double PI = acos(-1);
 #define fraction() cout.unsetf(ios::floatfield); cout.precision(10); cout.setf(ios::fixed,ios::floatfield);
 #define w(t) int t; cin >> t; cin.ignore(); while (t--) 
 
-
+ll digitSum(ll x) {
+    ll sum = 0;
+    while (x > 0) {
+        sum += x % 10;
+        x /= 10;
+    }
+    return sum;
+}
 int main()
 {
     nabidtheboss();
+    ll sum[200005];
+    sum[1]=1;
+      for (ll i = 2; i <= 200005; i++) {
+            sum[i] =sum[i-1]+ digitSum(i);
+        }
     w(t){
-        int n;
-        string s;
-        cin>>n>>s;
-         int l = 0,r = n-1;
-        while(l<=r)
-        {
-            if(s[l]=='B' && s[r]=='B')
-            {
-                cout<<r-l+1<<endl;
-                break;
-            }
-            if(s[l]!='B')
-            {
-                l++;
-            }
-            if(s[r]!='B')
-            {
-                r--;
-            }
+        ll n;
+        cin >> n;
+        cout << sum[n]<< endl;
     }
-    }
-
     return 0;
 }

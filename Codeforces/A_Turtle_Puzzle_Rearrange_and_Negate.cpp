@@ -42,25 +42,15 @@ int main()
     nabidtheboss();
     w(t){
         int n;
-        string s;
-        cin>>n>>s;
-         int l = 0,r = n-1;
-        while(l<=r)
-        {
-            if(s[l]=='B' && s[r]=='B')
-            {
-                cout<<r-l+1<<endl;
-                break;
-            }
-            if(s[l]!='B')
-            {
-                l++;
-            }
-            if(s[r]!='B')
-            {
-                r--;
-            }
-    }
+        cin>>n;
+        int a[n];
+        ll sum=0;
+        for(int i=0;i<n;i++) cin>>a[i];
+        for(int i=0;i<n;i++) {
+            if(a[i]<0) sum+=a[i]*-1;
+            else sum+=a[i];
+        }
+        cout<<sum<<endl;
     }
 
     return 0;

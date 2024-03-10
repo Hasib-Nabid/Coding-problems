@@ -40,28 +40,24 @@ const double PI = acos(-1);
 int main()
 {
     nabidtheboss();
-    w(t){
+   
         int n;
-        string s;
-        cin>>n>>s;
-         int l = 0,r = n-1;
-        while(l<=r)
-        {
-            if(s[l]=='B' && s[r]=='B')
-            {
-                cout<<r-l+1<<endl;
-                break;
+        cin>>n;
+        int a[n+1][n+1];
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n;j++){
+                cin>>a[i][j];
             }
-            if(s[l]!='B')
-            {
-                l++;
+        }
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n;j++){
+                if(a[i][j]==1){
+                    cout<<j<<" ";
+                }
             }
-            if(s[r]!='B')
-            {
-                r--;
-            }
-    }
-    }
+            cout<<endl;
+        }
+    
 
     return 0;
 }

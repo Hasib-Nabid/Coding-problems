@@ -42,26 +42,33 @@ int main()
     nabidtheboss();
     w(t){
         int n;
-        string s;
-        cin>>n>>s;
-         int l = 0,r = n-1;
-        while(l<=r)
-        {
-            if(s[l]=='B' && s[r]=='B')
-            {
-                cout<<r-l+1<<endl;
-                break;
+        cin>>n;
+        char arr[n][n];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+         cin>>arr[i][j];
             }
-            if(s[l]!='B')
-            {
-                l++;
+        }
+         bool flag=false;
+        vector<int>v;
+           for(int i=0;i<n;i++){
+             int c=0;
+            for(int j=0;j<n;j++){
+                if(arr[i][j]=='1'){
+                     c++;
+                }
             }
-            if(s[r]!='B')
-            {
-                r--;
-            }
+            v.push_back(c);
+        }
+        for(int i=0;i<v.size()-1;i++){
+            if(v[i]==v[i+1] && v[i]>0 && v[i+1]>0) {
+                flag=true;
+                 break;
+                 }
+        }
+        if(flag) cout<<"SQUARE"<<endl;
+        else cout<<"TRIANGLE"<<endl;
+    
     }
-    }
-
     return 0;
 }

@@ -42,25 +42,20 @@ int main()
     nabidtheboss();
     w(t){
         int n;
-        string s;
-        cin>>n>>s;
-         int l = 0,r = n-1;
-        while(l<=r)
-        {
-            if(s[l]=='B' && s[r]=='B')
-            {
-                cout<<r-l+1<<endl;
-                break;
-            }
-            if(s[l]!='B')
-            {
-                l++;
-            }
-            if(s[r]!='B')
-            {
-                r--;
-            }
-    }
+        ll ans=0;
+        cin>>n;
+        int nn=2*n;
+        int a[nn];
+
+        for(int i=0;i<nn;i++) cin>>a[i];
+        sort(a,a+nn,greater<int>());
+         
+        for(int i=0;i<nn-1;i++){
+            ans+=min(a[i],a[i+1]);
+            i++;
+        }
+    cout<<ans<<endl;
+
     }
 
     return 0;
