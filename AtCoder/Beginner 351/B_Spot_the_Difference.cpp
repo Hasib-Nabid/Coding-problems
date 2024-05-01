@@ -28,21 +28,27 @@ int32_t main ()
 {
 
     nabidtheboss();
-    w(t){
-        int n;
-        cin>>n;
-        int l=1,r=n;
-
-        while(l<=r){
-            if(l!=r){
-            cout<<r<<" ";
-            cout<<l<<" ";
-            }
-            else cout<<r<<" ";
-            l++;
-            r--;
+    int n;
+    cin>>n;
+     char a[n][n],b[n][n];
+    int s=0,ss=0;
+    loop(i,n) {
+        loop(j,n){
+        cin>>a[i][j];
+    }
+    }
+       loop(i,n) {
+        loop(j,n){
+        cin>>b[i][j];
+    }
+       }
+        loop(i,n) {
+        loop(j,n){
+        if(a[i][j]!=b[i][j]){
+            cout<<i+1<<" "<<j+1<<endl;
+            return 0;
         }
-        shesh;
+        }
     }
 
     return 0;

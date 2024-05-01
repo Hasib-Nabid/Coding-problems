@@ -29,20 +29,22 @@ int32_t main ()
 
     nabidtheboss();
     w(t){
-        int n;
-        cin>>n;
-        int l=1,r=n;
-
-        while(l<=r){
-            if(l!=r){
-            cout<<r<<" ";
-            cout<<l<<" ";
-            }
-            else cout<<r<<" ";
-            l++;
-            r--;
+        int n,k;
+        cin>>n>>k;
+        vi v(n),diff;
+        loop(i,n) {
+            cin>>v[i];
         }
-        shesh;
+
+          loop(i,n) {
+            diff.push_back(v[i]%k);
+          }
+    sort(all(diff));
+    int mn=diff.back()-diff[0];
+          loop(i,n-1) {
+          mn= min(diff[i]-diff[i+1]+k,mn);
+          }
+          cout<<mn<<endl;
     }
 
     return 0;

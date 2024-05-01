@@ -29,20 +29,23 @@ int32_t main ()
 
     nabidtheboss();
     w(t){
-        int n;
-        cin>>n;
-        int l=1,r=n;
+        string x,y;
+        cin>>x>>y;
 
-        while(l<=r){
-            if(l!=r){
-            cout<<r<<" ";
-            cout<<l<<" ";
+        for(int i=1;i<x.size();i++){
+            if(x>y){
+                if(x[i]>y[i]){
+                    swap(x[i],y[i]);
+                }
             }
-            else cout<<r<<" ";
-            l++;
-            r--;
+            else {
+                if(x[i]<y[i]){
+                    swap(x[i],y[i]);
+                }
+            }
         }
-        shesh;
+        cout<<x<<endl;
+        cout<<y<<endl;
     }
 
     return 0;

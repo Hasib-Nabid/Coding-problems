@@ -12,7 +12,6 @@ using namespace std;
 #define yes cout << "YES" << endl
 #define no cout << "NO" << endl
 #define shesh cout << endl
-#define loop(i,n) for (int i =0; i < (n); ++i)
 #define mem(a,b) memset(a, b, sizeof(a) )
 #define gcd(a,b) __gcd(a,b)
 typedef vector<int> vi;
@@ -29,21 +28,18 @@ int32_t main ()
 
     nabidtheboss();
     w(t){
-        int n;
+        int n,c=0;
         cin>>n;
-        int l=1,r=n;
-
-        while(l<=r){
-            if(l!=r){
-            cout<<r<<" ";
-            cout<<l<<" ";
-            }
-            else cout<<r<<" ";
-            l++;
-            r--;
-        }
-        shesh;
+        vi v(n),vv(n);
+        for(int i=0;i<n;i++) cin>>v[i];
+        for(int i=0;i<n;i++) cin>>vv[i];
+       int i = 0, j = 0;
+     for(int i=0;i<n;i++) {
+        if(vv[i]>=v[j])  j++;
+        else c++;   
     }
+    cout << c << endl;
+}
 
     return 0;
 }

@@ -29,20 +29,14 @@ int32_t main ()
 
     nabidtheboss();
     w(t){
-        int n;
-        cin>>n;
-        int l=1,r=n;
-
-        while(l<=r){
-            if(l!=r){
-            cout<<r<<" ";
-            cout<<l<<" ";
-            }
-            else cout<<r<<" ";
-            l++;
-            r--;
+        int n,m,ans=0;
+        cin>>n>>m;
+        for(int i=1;i<=m;i++){
+            int x=i*i;
+            ans+=((n+i)/x);
         }
-        shesh;
+        if(ans>=n) cout<<ans-1<<endl;
+        else cout<<ans<<endl;
     }
 
     return 0;

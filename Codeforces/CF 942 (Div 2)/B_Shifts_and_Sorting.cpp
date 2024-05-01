@@ -29,21 +29,25 @@ int32_t main ()
 
     nabidtheboss();
     w(t){
-        int n;
-        cin>>n;
-        int l=1,r=n;
-
-        while(l<=r){
-            if(l!=r){
-            cout<<r<<" ";
-            cout<<l<<" ";
+       string s;
+       cin>>s;
+       int c=0,ans=0;
+       bool ok=false;
+       for(int i=0;i<sz(s);i++){
+            if(s[i]=='1'){
+                c++;
+                ok=true;
             }
-            else cout<<r<<" ";
-            l++;
-            r--;
-        }
-        shesh;
+          else if(ok){
+                ans+=(c+1);
+            }
+            else {
+                ok=false;
+                c=0;
+            }
+       }
+        
+ cout<<ans<<endl;       
     }
 
-    return 0;
 }

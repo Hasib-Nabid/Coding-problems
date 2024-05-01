@@ -31,18 +31,27 @@ int32_t main ()
     w(t){
         int n;
         cin>>n;
-        int l=1,r=n;
+        vi v(n);
+        loop(i,n) cin>>v[i];
+bool flag=true;
 
-        while(l<=r){
-            if(l!=r){
-            cout<<r<<" ";
-            cout<<l<<" ";
+        for(int i=0;i<n-2;i++){
+            if(v[i]==0) continue;
+            else if(v[i]<0){
+                flag=false;
             }
-            else cout<<r<<" ";
-            l++;
-            r--;
+            else{
+                v[i+1]-=2*v[i];
+                v[i+2]-=v[i];
+                v[i]=0;
+            }
         }
-        shesh;
+
+int x=count(all(v),0);
+
+        
+        if(flag and x==n) yes;
+        else no;
     }
 
     return 0;

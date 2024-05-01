@@ -28,22 +28,17 @@ int32_t main ()
 {
 
     nabidtheboss();
-    w(t){
-        int n;
-        cin>>n;
-        int l=1,r=n;
-
-        while(l<=r){
-            if(l!=r){
-            cout<<r<<" ";
-            cout<<l<<" ";
-            }
-            else cout<<r<<" ";
-            l++;
-            r--;
-        }
-        shesh;
+    int a[9],b[8];
+    int s=0,ss=0;
+    loop(i,9) {
+        cin>>a[i];
+        s+=a[i];
     }
+    loop(i,8) {
+        cin>>b[i];
+        ss+=b[i];
+    }
+    cout<<s-ss+1;
 
     return 0;
 }

@@ -23,6 +23,7 @@ const double PI = acos(-1);
 #define fraction() cout.unsetf(ios::floatfield); cout.precision(10); cout.setf(ios::fixed,ios::floatfield);
 #define w(t) int t; cin >> t; cin.ignore(); while (t--) 
 
+const int MOD = 1000000007;
 
 int32_t main () 
 {
@@ -31,18 +32,25 @@ int32_t main ()
     w(t){
         int n;
         cin>>n;
-        int l=1,r=n;
-
-        while(l<=r){
-            if(l!=r){
-            cout<<r<<" ";
-            cout<<l<<" ";
-            }
-            else cout<<r<<" ";
-            l++;
-            r--;
+        vi v(n);
+        loop(i,n) {
+            cin>>v[i];
         }
-        shesh;
+
+        sort(all(v));
+        int ans=v[0];
+
+        for(int i=1;i<n;i++){
+            if(ans<=1 or v[i]<=1){
+                ans+=v[i];
+                ans%=MOD;
+            }
+            else {
+                ans*=v[i];
+                ans%=MOD;
+        }
+        }
+        cout<<ans<<endl;
     }
 
     return 0;

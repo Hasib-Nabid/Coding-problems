@@ -29,20 +29,20 @@ int32_t main ()
 
     nabidtheboss();
     w(t){
-        int n;
-        cin>>n;
-        int l=1,r=n;
+        int n,k,m;
+        cin>>n>>k>>m;
+        vi v(n);
+        loop(i,n) cin>>v[i];
 
-        while(l<=r){
-            if(l!=r){
-            cout<<r<<" ";
-            cout<<l<<" ";
+        int cnt=0;
+          loop(i,n) {
+            if(k*v[i]<m){
+                cnt+=k*v[i];
             }
-            else cout<<r<<" ";
-            l++;
-            r--;
-        }
-        shesh;
+            else cnt+=m;
+          }
+
+          cout<<cnt<<endl;
     }
 
     return 0;

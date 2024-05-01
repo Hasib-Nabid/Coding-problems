@@ -29,20 +29,21 @@ int32_t main ()
 
     nabidtheboss();
     w(t){
-        int n;
-        cin>>n;
-        int l=1,r=n;
+        int n,k;
+        cin>>n>>k;
+        vi v(n);
+        loop(i,n) cin>>v[i];
 
-        while(l<=r){
-            if(l!=r){
-            cout<<r<<" ";
-            cout<<l<<" ";
-            }
-            else cout<<r<<" ";
-            l++;
-            r--;
-        }
-        shesh;
+        int cnt=0;
+        sort(all(v));
+          loop(i,n) {
+          if(v[i]<=3 and k>0){
+            cnt+=(7-v[i]);
+            --k;
+          }
+            else cnt+=v[i];
+          }
+          cout<<cnt<<endl;
     }
 
     return 0;

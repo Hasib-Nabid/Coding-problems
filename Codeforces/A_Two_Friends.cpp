@@ -31,18 +31,23 @@ int32_t main ()
     w(t){
         int n;
         cin>>n;
-        int l=1,r=n;
-
-        while(l<=r){
-            if(l!=r){
-            cout<<r<<" ";
-            cout<<l<<" ";
-            }
-            else cout<<r<<" ";
-            l++;
-            r--;
+        vector<pair<int,int>>v;
+        loop(i,n){
+            int a;
+            cin>>a;
+            v.push_back({a,i+1});
         }
-        shesh;
+bool flag=false;
+        for(int i=0;i<n-1;i++){
+             for(int j=i+1;j<n;j++){
+            if(v[i].first==v[j].second and v[i].second==v[j].first){
+                flag=true;
+                break;
+            }
+        }
+        }
+        if(flag) cout<<2<<endl;
+        else cout<<3<<endl;
     }
 
     return 0;

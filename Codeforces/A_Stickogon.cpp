@@ -29,20 +29,18 @@ int32_t main ()
 
     nabidtheboss();
     w(t){
-        int n;
+        int n,cnt=0;
         cin>>n;
-        int l=1,r=n;
-
-        while(l<=r){
-            if(l!=r){
-            cout<<r<<" ";
-            cout<<l<<" ";
-            }
-            else cout<<r<<" ";
-            l++;
-            r--;
+        vi v(n);
+        map<int,int>m;
+        loop(i,n) {
+            cin>>v[i];
+            m[v[i]]++;
         }
-        shesh;
+        for(auto u:m){
+            cnt+=(u.second/3);
+        }
+        cout<<cnt<<endl;
     }
 
     return 0;
